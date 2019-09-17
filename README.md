@@ -28,25 +28,25 @@ Future enhancement and implementation:
 - SNS       :   $0.50 (Per 1 million Amazon SNS, first 1 million is free)
 
 ## Use cases
-### Greet the user with welcome message and HR menu options - Lambda Fulfilment
+### 1. Greet the user with welcome message and HR menu options - Lambda Fulfilment
 
-### User authentication and validation against identity database (DynamoDB in our case) - Lambda Validation
+### 2. User authentication and validation against identity database (DynamoDB in our case) - Lambda Validation
 
-### Log in working hours, validate date and working hours
+### 3. Log in working hours, validate date and working hours
 
-### Calculate pay in a particular month
+### 4. Calculate pay in a particular month
 
-### Search common FAQs related to HR services, like Policy, Salary, Agent
+### 5. Search common FAQs related to HR services, like Policy, Salary, Agent
 
-### Sentiment Analysis of user interaction and connect to human support of negative sentiment found
+### 6. Sentiment Analysis of user interaction and connect to human support of negative sentiment found
 
 ## Integration
-### Slack, FB, Kik, twilio
+### 1. Slack, FB, Kik, twilio
 
-### Amazon Pinpoint - two way SMS
+### 2. Amazon Pinpoint - two way SMS
 
-### Amazon Connect - connect center
+### 3. Amazon Connect - connect center
 
-### Amazon Sumerian - talk to virtual host
+### 4. Amazon Sumerian - talk to virtual host
 
-### Publish as Alexa Skill - Ask Alexa
+### 5. Publish as Alexa Skill - Ask Alexa
