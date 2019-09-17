@@ -2,7 +2,7 @@
 Build Amazon Lex chatbot to interact with Lambda, Amazon DynamoDB, Amazon Pinpoint, Amazon Comprehend, Amazon Connect, Twilio, Slack, Facebook, Kik and Alexa devices
 
 ## Architecture
-![architecture](images/readme/hrbot_arch.png)
+![architecture](images/readme/hrbot.png)
 
 ## Motivation to build this bot
 Bot is built for those employees who does not have or does not like navigating to complicated HR website to communicate for doing basic daily tasks, and would rather do it using SMS, Call, Alexa devices as regular dialog coversation like you are asking your assitant or friend to do the task for you.
