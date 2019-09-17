@@ -19,23 +19,34 @@ Future enhancement and implementation:
 2. More HR functionalities like vacations calander, leave balance etc
 
 ## Cost of this serverless setup for a month use even for production scale $2 - $10
-Lex       :   $0.38 (500 text requests)
-Pinpoint  : 	$0.06 (first 100 SMS FREE then $0.00645 per request)
-Lambda    :   $0.20 (PER 1M REQUESTS, First 1M requests per month are free)
-DynamoDB  :   $1.50 (First 25 GB per month is free + $1.25/million write + $0.25/million read)
-Comprehend:   $0.0001 (Upto 10M units)
-Connect   :   $0.06 (For inbound calls in USA)
-SNS       :   $0.50 (Per 1 million Amazon SNS, first 1 million is free)
+- Lex       :   $0.38 (500 text requests)
+- Pinpoint  : 	$0.06 (first 100 SMS FREE then $0.00645 per request)
+- Lambda    :   $0.20 (PER 1M REQUESTS, First 1M requests per month are free)
+- DynamoDB  :   $1.50 (First 25 GB per month is free + $1.25/million write + $0.25/million read)
+- Comprehend:   $0.0001 (Upto 10M units)
+- Connect   :   $0.06 (For inbound calls in USA)
+- SNS       :   $0.50 (Per 1 million Amazon SNS, first 1 million is free)
 
-# Use cases
-## Greet the user with welcome message and HR menu options - Lambda Fulfilment
+## Use cases
+### Greet the user with welcome message and HR menu options - Lambda Fulfilment
 
-## User authentication and validation against identity database (DynamoDB in our case) - Lambda Validation
+### User authentication and validation against identity database (DynamoDB in our case) - Lambda Validation
 
-## Log in working hours, validate date and working hours
+### Log in working hours, validate date and working hours
 
-## Calculate pay in a particular month
+### Calculate pay in a particular month
 
-## Search common FAQs related to HR services, like Policy, Salary, Agent
+### Search common FAQs related to HR services, like Policy, Salary, Agent
 
-## Sentiment Analysis of user interaction and connect to human support of negative sentiment found
+### Sentiment Analysis of user interaction and connect to human support of negative sentiment found
+
+## Integration
+### Slack, FB, Kik, twilio
+
+### Amazon Pinpoint - two way SMS
+
+### Amazon Connect - connect center
+
+### Amazon Sumerian - talk to virtual host
+
+### Publish as Alexa Skill - Ask Alexa
