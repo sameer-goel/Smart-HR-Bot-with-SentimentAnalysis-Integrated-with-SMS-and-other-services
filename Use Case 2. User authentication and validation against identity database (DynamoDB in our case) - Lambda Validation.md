@@ -53,6 +53,7 @@ def validate_name(name):
     
     return build_validation_result(True, None, None)
 ```
+The above function right now validates on a list of names, but we can enhance our use case with validating against username database.
 
 We need to do following:
 1.	We want Lambda to talk to Dynamodb to need to attach dynamodb policy to the lambda role
@@ -69,5 +70,23 @@ We need to do following:
  
 > Dynamodb full access
 <img src="images/usecase2/3.png" width="500">
+
+Save this role.
+
+2. Create DynamoDB table, navigate to DynamoDB console
+<img src="images/usecase2/4.png" width="200">
+
+Primary key as ‘name’
+<img src="images/usecase2/5.png" width="1000">
+
+Create Item
+<img src="images/usecase2/6.png" width="200"><img src="images/usecase2/7.png" width="200">
+
+Repeat to enter some example names
+<img src="images/usecase2/7.png" width="500">
+  
+You are now ready to query from dynamodb table using Jupyter notebook
+Ref: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.Python.03.html
+
 
 

@@ -1,0 +1,365 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "HR_Portal",
+    "version": "4",
+    "intents": [
+      {
+        "name": "CalculateMyPay",
+        "version": "7",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:123456789876:function:hr_portal-hook",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "calculate my pay",
+          "calculate my pay for {WorkMonth} {WorkYear}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.US_FIRST_NAME",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "What is your username?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "Username"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "CalanderMonth",
+            "slotTypeVersion": "1",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "pay for which month?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "name": "WorkMonth"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.FOUR_DIGIT_NUMBER",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "pay for which year?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 3,
+            "name": "WorkYear"
+          }
+        ],
+        "dialogCodeHook": {
+          "uri": "arn:aws:lambda:us-east-1:123456789876:function:hr_portal-hook",
+          "messageVersion": "1.0"
+        }
+      },
+      {
+        "name": "HRInfo",
+        "version": "9",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:123456789876:function:hr_portal-hook",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "question regarding {Question}",
+          "faq"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "String",
+            "slotTypeVersion": "1",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "what can I help you with?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "Question"
+          }
+        ]
+      },
+      {
+        "name": "DoSomething",
+        "version": "9",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:123456789876:function:hr_portal-hook",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "Hey its {Name}",
+          "Hello",
+          "Hey",
+          "Hi",
+          "My username is {Name}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [
+              "my name is {Name}"
+            ],
+            "slotType": "AMAZON.US_FIRST_NAME",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Please confirm your identity by entering your username"
+                },
+                {
+                  "contentType": "PlainText",
+                  "content": "Please confirm your username"
+                },
+                {
+                  "contentType": "PlainText",
+                  "content": "Please confirm your identity"
+                }
+              ],
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\"}",
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "Name"
+          }
+        ],
+        "dialogCodeHook": {
+          "uri": "arn:aws:lambda:us-east-1:123456789876:function:hr_portal-hook",
+          "messageVersion": "1.0"
+        }
+      },
+      {
+        "name": "LogMyHours",
+        "version": "9",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:123456789876:function:hr_portal-hook",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "log my hours",
+          "log my {WorkHours} hours",
+          "log hours for {Username}",
+          "log {WorkHours} hours for {Username} for {WorkDate}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.US_FIRST_NAME",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "What is your username?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "Username"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.DATE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "Logging hours for which date?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "name": "WorkDate"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.NUMBER",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "How many hours you worked?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 3,
+            "name": "WorkHours"
+          }
+        ],
+        "dialogCodeHook": {
+          "uri": "arn:aws:lambda:us-east-1:123456789876:function:hr_portal-hook",
+          "messageVersion": "1.0"
+        }
+      }
+    ],
+    "slotTypes": [
+      {
+        "name": "String",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "agent",
+            "synonyms": []
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "description": "Standrad Calander Months",
+        "name": "CalanderMonth",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "11",
+            "synonyms": [
+              "nov",
+              "november"
+            ]
+          },
+          {
+            "value": "01",
+            "synonyms": [
+              "Jan",
+              "january",
+              "jan"
+            ]
+          },
+          {
+            "value": "12",
+            "synonyms": [
+              "dec",
+              "december"
+            ]
+          },
+          {
+            "value": "02",
+            "synonyms": [
+              "feb",
+              "February"
+            ]
+          },
+          {
+            "value": "03",
+            "synonyms": [
+              "mar",
+              "march"
+            ]
+          },
+          {
+            "value": "04",
+            "synonyms": [
+              "apr",
+              "april"
+            ]
+          },
+          {
+            "value": "05",
+            "synonyms": [
+              "may"
+            ]
+          },
+          {
+            "value": "06",
+            "synonyms": [
+              "jun",
+              "june"
+            ]
+          },
+          {
+            "value": "07",
+            "synonyms": [
+              "jul",
+              "july"
+            ]
+          },
+          {
+            "value": "08",
+            "synonyms": [
+              "aug",
+              "august"
+            ]
+          },
+          {
+            "value": "09",
+            "synonyms": [
+              "sep",
+              "september"
+            ]
+          },
+          {
+            "value": "10",
+            "synonyms": [
+              "oct",
+              "october"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      }
+    ],
+    "voiceId": "Joanna",
+    "childDirected": false,
+    "locale": "en-US",
+    "idleSessionTTLInSeconds": 60,
+    "clarificationPrompt": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Sorry, can you please repeat that?"
+        }
+      ],
+      "maxAttempts": 5
+    },
+    "abortStatement": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Sorry, I could not understand. Goodbye."
+        }
+      ]
+    }
+  }
+}
