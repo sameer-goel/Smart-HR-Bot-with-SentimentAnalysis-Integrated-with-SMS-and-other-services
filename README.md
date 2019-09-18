@@ -29,8 +29,7 @@ Future enhancement and implementation:
 
 ## Use cases
 ### 1. Greet the user with welcome message and HR menu options - Lambda Fulfilment
-![usecase1](images/usecase1/usecase1.png=10)
-<img src="images/usecase1/usecase1.png" alt="usecase1" width="50">
+<img src="images/usecase1/usecase1.png" alt="usecase1" width="500">
 ### 2. User authentication and validation against identity database (DynamoDB in our case) - Lambda Validation
 ![usecase2](images/usecase2/usercase2.png)
 ### 3. Log in working hours, validate date and working hours
