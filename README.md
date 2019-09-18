@@ -34,7 +34,7 @@ Future enhancement and implementation:
 
 ### 3. Log in working hours, validate date and working hours
 
-### 4. Calculate pay in a particular month
+### 4. Calculate pay in a particular month, validate if existing user
 
 ### 5. Search common FAQs related to HR services, like Policy, Salary, Agent
 
