@@ -44,8 +44,8 @@ def do_this(intent_request):
 ### Validation function
 ```
 def validate_name(name):
-    #friends = ['srinivas', 'laxmi']
-    friends=find_name_in_ddb(name)
+    friends = ['srinivas', 'laxmi']
+    #friends=find_name_in_ddb(name)
     if name is not None and name.lower() not in friends:
         return build_validation_result(False,
                                        'Name',
@@ -53,3 +53,19 @@ def validate_name(name):
     
     return build_validation_result(True, None, None)
 ```
+
+We need to do following:
+1.	We want Lambda to talk to Dynamodb to need to attach dynamodb policy to the lambda role
+2.	Jypytur notebook installed on local is great to test dynamodb sql (https://www.chrisjmendez.com/2018/11/06/installing-jupyter-on-os-x-using-homebrew/)
+3.	Create a DynamoDB table
+
+## Steps
+1.	Add a Dynamodb permissions to Lambda
+Navigate to IAM role attached to lambda - View the HR_portal_Lex_role in IAM console
+<img src="images/usecase2/1.png" width="500">
+
+Attach policy
+<img src="images/usecase2/2.png" width="500">
+ 
+Dynamodb full access
+<img src="images/usecase2/3.png" width="500">
