@@ -84,10 +84,15 @@ Save this role.
 <img src="images/usecase2/6.png" width="400"><img src="images/usecase2/7.png" width="400">
 
 - Repeat to enter some example names
-<img src="images/usecase2/7.png" width="500">
+<img src="images/usecase2/8.png" width="500">
   
-You are now ready to query from dynamodb table using Jupyter notebook or using lambda function, refer below for syntax
+You are now ready to query from dynamodb table using Jupyter notebook or using lambda function, refer below for syntax.
 Ref: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.Python.03.html
 
+Now uncomment the section of dynamoDB and comment the list in our validation function
+```
+    #friends = ['srinivas', 'laxmi']
+    friends=find_name_in_ddb(name)
+```
 
 
