@@ -1,0 +1,14 @@
+Agenda: Create HR Bot functionality of Logging hours of an employee
+
+We need to do following:
+1.	Create a dynamodb table called timesheet
+2.	Put item in this table
+Functions introduced:
+
+Steps:
+
+Create a dynamodb table
+
+ 
+
+
