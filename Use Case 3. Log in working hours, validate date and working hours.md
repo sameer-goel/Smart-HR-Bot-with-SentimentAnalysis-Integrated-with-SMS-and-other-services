@@ -1,4 +1,4 @@
-# Log in working hours, validate date and working hoursCreate HR Bot functionality of Logging hours of an employee
+# Log in working hours, validate date and working hours
 
 ## demo
 <img src="images/usecase3/usecase3.png" alt="usecase3" width="500">
@@ -91,6 +91,31 @@ def putItemInDDB(work_hours,work_date,user_name):
     return (put_response ["ResponseMetadata"]["HTTPStatusCode"])
 ```
 
- 
+ ## Configure test event
+ ```
+ {
+  "messageVersion": "1.0",
+  "invocationSource": "DialogCodeHook",
+  "userId": "test_user",
+  "sessionAttributes": {},
+  "bot": {
+    "name": "HR_Bot",
+    "alias": "$LATEST",
+    "version": "$LATEST"
+  },
+  "outputDialogMode": "Text",
+  "currentIntent": {
+    "name": "LogMyHours",
+    "slots": {
+      "Username": "Laxmi",
+      "WorkDate": "2019-10-09",
+      "WorkHours": 7
+    },
+    "confirmationStatus": "None"
+  },
+  "inputTranscript": "This is awesome"
+}
+ ```
 
+ You should test dynmoDB function in jupyter notebook first and then test lambda using events and then actual bot
 
