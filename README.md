@@ -13,11 +13,16 @@ The task this bot can do are:
 2. Calculate total pay for the month.
 3. FAQ search like polcies, agent, salary etc
 4. Most importantly, all the interactions are beging analyzed by Amazon Comprehend for sentiment analysis. This way if the user is not happy we can divert the interation immidiatly to human.
+You can always add more more HR functionalities like vacations calander, leave balance etc
 
 Future enhancement and implementation:
 1. Integration with AR VR Amazon sumerian https://docs.sumerian.amazonaws.com/tutorials/create/beginner/dialogue-component/
-2. One-time passwords (OTP) to authenticate users. https://aws.amazon.com/blogs/machine-learning/authenticate-users-with-one-time-passwords-in-amazon-lex-chatbots/
-3. More HR functionalities like vacations calander, leave balance etc
+2. One-time passwords (OTP) to authenticate users https://aws.amazon.com/blogs/machine-learning/authenticate-users-with-one-time-passwords-in-amazon-lex-chatbots/
+3. Lex bot integration with Office 365 https://aws.amazon.com/blogs/machine-learning/schedule-an-appointment-in-office-365-using-an-amazon-lex-bot/
+4. Use languange transalation to make it multilingual bot https://aws.amazon.com/blogs/machine-learning/create-a-translator-chatbot-using-amazon-translate-and-amazon-lex/
+5. Document search using elasticseach https://aws.amazon.com/blogs/machine-learning/build-a-document-search-bot-using-amazon-lex-and-amazon-elasticsearch-service/
+6. Deploy on web https://aws.amazon.com/blogs/machine-learning/deploy-a-web-ui-for-your-chatbot/
+7. Build chatbot using Excel https://aws.amazon.com/blogs/machine-learning/build-an-amazon-lex-chatbot-with-microsoft-excel/
 
 ## Cost of this serverless setup for a month use even for production scale $2 - $10
 - Lex       :   $0.38 (500 text requests)
