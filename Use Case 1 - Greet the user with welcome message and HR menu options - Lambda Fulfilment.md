@@ -31,8 +31,7 @@ Create a Lambda Function (Console) - https://docs.aws.amazon.com/lex/latest/dg/g
 -	Slots – Name: Name, Slot Type: AMAON.US_FIRST_NAME
 <img src="images/usecase1/4.png" width="1000">
 
--   Click gear icon and put some 
-Promts like:
+Click gear icon and put some Promts like:
 - Please confirm your identity
 - Please confirm your username
 - Please confirm your identity by entering your username
