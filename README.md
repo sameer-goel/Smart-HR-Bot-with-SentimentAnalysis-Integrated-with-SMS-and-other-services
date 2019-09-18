@@ -25,7 +25,7 @@ You can always add more more HR functionalities like vacations calander, leave b
 - SNS       :   $0.50 (Per 1 million Amazon SNS, first 1 million is free)
 
 ## Use cases
-### 1. Greet the user with welcome message and HR menu options - Lambda Fulfilment [1][1]
+### 1. Greet the user with welcome message and HR menu options - Lambda Fulfilment
 <img src="images/usecase1/usecase1.png" alt="usecase1" width="500">
 
 ### 2. User authentication and validation against identity database (DynamoDB in our case) - Lambda Validation
@@ -76,5 +76,3 @@ You can always add more more HR functionalities like vacations calander, leave b
 5. Document search using elasticseach https://aws.amazon.com/blogs/machine-learning/build-a-document-search-bot-using-amazon-lex-and-amazon-elasticsearch-service/
 6. Deploy on web https://aws.amazon.com/blogs/machine-learning/deploy-a-web-ui-for-your-chatbot/
 7. Build chatbot using Excel https://aws.amazon.com/blogs/machine-learning/build-an-amazon-lex-chatbot-with-microsoft-excel/
-
-[1]: Use Case 1 - Greet the user with welcome message and HR menu options - Lambda Fulfilment.md

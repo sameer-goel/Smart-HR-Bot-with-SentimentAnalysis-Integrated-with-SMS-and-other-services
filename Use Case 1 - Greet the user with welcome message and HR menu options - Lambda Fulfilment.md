@@ -76,7 +76,6 @@ Corresponding utterances:
 }
 ```
 
-
 Add more prompts and corresponding utterances to the slot, remember to BUILD again
  
 Test your bot
