@@ -76,16 +76,16 @@ Save this role.
 2. Create DynamoDB table, navigate to DynamoDB console
 <img src="images/usecase2/4.png" width="200">
 
-Primary key as ‘name’
+- Primary key as ‘name’
 <img src="images/usecase2/5.png" width="1000">
 
-Create Item
+- Create Item
 <img src="images/usecase2/6.png" width="200"><img src="images/usecase2/7.png" width="200">
 
-Repeat to enter some example names
+- Repeat to enter some example names
 <img src="images/usecase2/7.png" width="500">
   
-You are now ready to query from dynamodb table using Jupyter notebook
+You are now ready to query from dynamodb table using Jupyter notebook or using lambda function, refer below for syntax
 Ref: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.Python.03.html
 
 
