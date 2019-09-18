@@ -36,11 +36,14 @@ Future enhancement and implementation:
 
 ### 3. Log in working hours, validate date and working hours
 <img src="images/usecase3/usecase3.png" alt="usecase3" width="500">
+#### validate date
 <img src="images/usecase3/usecase3dateval.png" alt="usecase3" width="500">
+#### validate hours
 <img src="images/usecase3/usercase3hoursval.png" alt="usecase3" width="500">
 
 ### 4. Calculate pay in a particular month, validate if existing user
 <img src="images/usecase4/usecase4.png" alt="usecase4" width="500">
+#### validate if existing user
 <img src="images/usecase4/usecase4userval.png" alt="usecase4" width="500">
 
 ### 5. Search common FAQs related to HR services, like Policy, Salary, Agent
