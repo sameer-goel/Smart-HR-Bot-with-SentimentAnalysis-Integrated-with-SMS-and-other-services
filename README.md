@@ -30,19 +30,25 @@ Future enhancement and implementation:
 ## Use cases
 ### 1. Greet the user with welcome message and HR menu options - Lambda Fulfilment
 <img src="images/usecase1/usecase1.png" alt="usecase1" width="500">
+
 ### 2. User authentication and validation against identity database (DynamoDB in our case) - Lambda Validation
-![usecase2](images/usecase2/usercase2.png)
+<img src="images/usecase2/usercase2.png" alt="usecase2" width="500">
+
 ### 3. Log in working hours, validate date and working hours
-![usecase3](images/usecase3/usecase3.png)
-![usecase3](images/usecase3/usecase3dateval.png)
-![usecase3](images/usecase3/usercase3hoursval.png)
+<img src="images/usecase3/usercase3.png" alt="usecase3" width="500">
+<img src="images/usecase3/usecase3dateval.png" alt="usecase3" width="500">
+<img src="images/usecase3/usercase3hoursval.png" alt="usecase3" width="500">
+
 ### 4. Calculate pay in a particular month, validate if existing user
-![usecase4](images/usecase4/usecase4.png)
-![usecase4](images/usecase4/usecase4userval.png)
+<img src="images/usecase3/usecase4.png" alt="usecase4" width="500">
+<img src="images/usecase3/usecase4userval.png" alt="usecase4" width="500">
+
 ### 5. Search common FAQs related to HR services, like Policy, Salary, Agent
-![usecase5](images/usecase5/usecase5.png)
+<img src="images/usecase3/usecase5.png" alt="usecase5" width="500">
+
 ### 6. Sentiment Analysis of user interaction and connect to human support of negative sentiment found
-![usecase6](images/usecase6/usecase6.png)
+<img src="images/usecase3/usecase6.png" alt="usecase6" width="500">
+
 ## Integration
 ### 1. Slack, FB, Kik, twilio
 
