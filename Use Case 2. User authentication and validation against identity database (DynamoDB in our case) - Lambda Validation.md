@@ -53,6 +53,33 @@ def validate_name(name):
     
     return build_validation_result(True, None, None)
 ```
+
+### Configure Event to test this function in lambda
+this is same event used in use-case 1
+```
+{
+  "messageVersion": "1.0",
+  "invocationSource": "DialogCodeHook",
+  "userId": "tast_user",
+  "sessionAttributes": {},
+  "bot": {
+    "name": "HR_Bot",
+    "alias": "$LATEST",
+    "version": "$LATEST"
+  },
+  "outputDialogMode": "Text",
+  "currentIntent": {
+    "name": "DoSomething",
+    "slots": {
+      "Name": "laxmi"
+    },
+    "confirmationStatus": "None"
+  },
+  "inputTranscript": "This is awesome"
+}
+```
+<img src="images/usecase1/7.png" width="1000">
+
 The above function right now validates on a list of names, but we can enhance our use case with validating against username database.
 
 We need to do following:
@@ -86,8 +113,51 @@ Save this role.
 - Repeat to enter some example names
 <img src="images/usecase2/8.png" width="300">
   
-You are now ready to query from dynamodb table using Jupyter notebook or using lambda function, refer below for syntax.
+You are now ready to query from dynamodb table using Jupyter notebook in following steps or using lambda function, refer below for syntax.
 Ref: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.Python.03.html
+
+3. Testing code in Jupyter notebook
+
+<img src="images/usecase2/9.png" width="500">
+
+```
+import boto3
+from boto3.dynamodb.conditions import Key, Attr
+
+# DynamoDb table decaration
+dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
+table = dynamodb.Table('friends')
+
+name = 'laxmi'
+
+response = table.query(
+    KeyConditionExpression=Key('name').eq(name)
+)
+
+for i in response['Items']:
+    names = (i['name'])
+
+if name in names:
+    print("name found")
+else:
+    print("name not found")
+
+```
+4. Search from DynamoDB table function
+
+```
+def find_name_in_ddb(name):
+    friends_table = dynamodb.Table('friends')
+    name = str(name)
+    response = friends_table.query(
+        KeyConditionExpression=Key('name').eq(name)
+        )
+    names=[]
+    for i in response['Items']:
+        names = (i['name'].lower())
+    
+    return(names)
+```
 
 Now uncomment the section of dynamoDB and comment the list in our validation function
 ```
@@ -95,4 +165,5 @@ Now uncomment the section of dynamoDB and comment the list in our validation fun
     friends=find_name_in_ddb(name)
 ```
 
-
+Test again with the configured event
+<img src="images/usecase1/6.png" width="1000">
