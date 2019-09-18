@@ -7,8 +7,7 @@ Calculate pay based on username for a particular month and year.
 <img src="images/usecase4/usecase4userval.png" alt="usecase4" width="500">
 
 ## We need to do following:
-1.	Create a dynamodb table called timesheet
-2.	Put item in this table based on user interaction
+1.	Write a function to Get item in DDB table based on user provided date
 
 ## Functions
 ```
