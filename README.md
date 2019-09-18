@@ -15,7 +15,7 @@ The task this bot can do are:
 4. Most importantly, all the interactions are beging analyzed by Amazon Comprehend for sentiment analysis. This way if the user is not happy we can divert the interation immidiatly to human.
 You can always add more more HR functionalities like vacations calander, leave balance etc
 
-## Cost of this serverless setup for a month use even for production scale $2 - $10
+## Cost of this serverless setup for a month use even for production scale $2 - $5
 - Lex       :   $0.38 (500 text requests)
 - Pinpoint  : 	$0.06 (first 100 SMS FREE then $0.00645 per request)
 - Lambda    :   $0.20 (PER 1M REQUESTS, First 1M requests per month are free)
@@ -49,7 +49,7 @@ You can always add more more HR functionalities like vacations calander, leave b
 ### 6. Sentiment Analysis of user interaction and connect to human support of negative sentiment found
 <img src="images/usecase6/usecase6.png" alt="usecase6" width="500">
 
-## Integration
+## Integrations
 ### 1. Slack, FB, Kik, twilio
 - Slack: https://docs.aws.amazon.com/lex/latest/dg/slack-bot-association.html
 - FB: https://docs.aws.amazon.com/lex/latest/dg/fb-bot-association.html
@@ -68,7 +68,7 @@ You can always add more more HR functionalities like vacations calander, leave b
 ### 5. Publish as Alexa Skill - Ask Alexa
 - https://docs.aws.amazon.com/lex/latest/dg/export-to-alexa.html
 
-## Future enhancement and implementation:
+## Future enhancements and implementations:
 1. Integration with AR VR Amazon sumerian https://docs.sumerian.amazonaws.com/tutorials/create/beginner/dialogue-component/
 2. One-time passwords (OTP) to authenticate users https://aws.amazon.com/blogs/machine-learning/authenticate-users-with-one-time-passwords-in-amazon-lex-chatbots/
 3. Lex bot integration with Office 365 https://aws.amazon.com/blogs/machine-learning/schedule-an-appointment-in-office-365-using-an-amazon-lex-bot/
