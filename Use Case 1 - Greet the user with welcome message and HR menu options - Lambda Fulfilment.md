@@ -50,6 +50,8 @@ Corresponding utterances:
 6.	Copy code from Lab1_Mod1.py in Lambda editor
 
 7.	Configure sample test event to test the code
+<img src="images/usecase1/6.png" width="1000">
+<img src="images/usecase1/7.png" width="1000">
 
 ``` 
 {
@@ -73,6 +75,7 @@ Corresponding utterances:
   "inputTranscript": "This is ok"
 }
 ```
+
 
 Add more prompts and corresponding utterances to the slot, remember to BUILD again
  
