@@ -61,11 +61,13 @@ We need to do following:
 
 ## Steps
 1.	Add a Dynamodb permissions to Lambda
-Navigate to IAM role attached to lambda - View the HR_portal_Lex_role in IAM console
+> Navigate to IAM role attached to lambda - View the HR_portal_Lex_role in IAM console
 <img src="images/usecase2/1.png" width="500">
 
-Attach policy
+> Attach policy
 <img src="images/usecase2/2.png" width="500">
  
-Dynamodb full access
+> Dynamodb full access
 <img src="images/usecase2/3.png" width="500">
+
+
