@@ -1,13 +1,14 @@
 # Log in working hours, validate date and working hours
+Log work hours and validate for invalid date or number of hours
 
-## demo
+## Demo
 <img src="images/usecase3/usecase3.png" alt="usecase3" width="500">
 > validate date
 <img src="images/usecase3/usecase3dateval.png" alt="usecase3" width="500">
 > validate hours
 <img src="images/usecase3/usercase3hoursval.png" alt="usecase3" width="500">
 
-### We need to do following:
+## We need to do following:
 1.	Create a dynamodb table called timesheet
 2.	Put item in this table based on user interaction
 
@@ -92,6 +93,7 @@ def putItemInDDB(work_hours,work_date,user_name):
 ```
 
  ## Configure test event
+ change the values according to your data
  ```
  {
   "messageVersion": "1.0",

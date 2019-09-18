@@ -4,6 +4,11 @@ do_this() include the validation function validate_name()
 ## Demo:
 <img src="images/usecase2/usercase2.png" alt="usecase2" width="500">
 
+## We need to do following:
+1.	We want Lambda to talk to Dynamodb to need to attach dynamodb policy to the lambda role
+2.	Jypytur notebook installed on local is great to test dynamodb sql (https://www.chrisjmendez.com/2018/11/06/installing-jupyter-on-os-x-using-homebrew/)
+3.	Create a DynamoDB table
+
 ## New functions introduced here:
 - elicit_slot: Informs Amazon Lex that the user is expected to provide a slot value in the response.
 - delegate: Directs Amazon Lex to choose the next course of action based on the bot configuration.
@@ -55,7 +60,7 @@ def validate_name(name):
 ```
 
 ### Configure Event to test this function in lambda
-this is same event used in use-case 1
+this is same event used in use-case 1, change the values according to your data
 ```
 {
   "messageVersion": "1.0",
@@ -81,11 +86,6 @@ this is same event used in use-case 1
 <img src="images/usecase1/7.png" width="1000">
 
 The above function right now validates on a list of names, but we can enhance our use case with validating against username database.
-
-We need to do following:
-1.	We want Lambda to talk to Dynamodb to need to attach dynamodb policy to the lambda role
-2.	Jypytur notebook installed on local is great to test dynamodb sql (https://www.chrisjmendez.com/2018/11/06/installing-jupyter-on-os-x-using-homebrew/)
-3.	Create a DynamoDB table
 
 ## Steps
 1.	Add a Dynamodb permissions to Lambda

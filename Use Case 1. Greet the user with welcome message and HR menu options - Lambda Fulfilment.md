@@ -1,5 +1,10 @@
-## Use Case 1 - Greet the user with welcome message and HR menu options - Lambda Fulfilment
-We need to do following:
+# Use Case 1 - Greet the user with welcome message and HR menu options - Lambda Fulfilment
+Simple use-case where you repond with a message from lambda
+
+## Demo:
+<img src="images/usecase1/usecase1.png" alt="usecase1" width="500">
+
+## We need to do following:
 1. Create Lex chat bot 
 2. Create a lambda function that can fulfil Lex responses
 
@@ -8,9 +13,6 @@ You can open these docs for further information
 Create an Amazon Lex Bot (Console) - https://docs.aws.amazon.com/lex/latest/dg/gs-bp-create-bot.html
 Create a Lambda Function (Console) - https://docs.aws.amazon.com/lex/latest/dg/gs-bp-create-lambda-function.html
 
-## Demo:
-<img src="images/usecase1/usecase1.png" alt="usecase1" width="500">
- 
 ## Steps:
 
 ### Navigate to Lex service in AWS Console
@@ -53,6 +55,8 @@ Corresponding utterances:
 <img src="images/usecase1/6.png" width="1000">
 <img src="images/usecase1/7.png" width="1000">
 
+## Configure test event in lambda
+change the values according to your data
 ``` 
 {
   "messageVersion": "1.0",
