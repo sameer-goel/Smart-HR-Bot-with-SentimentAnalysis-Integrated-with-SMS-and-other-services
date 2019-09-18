@@ -25,7 +25,7 @@ You can always add more more HR functionalities like vacations calander, leave b
 - SNS       :   $0.50 (Per 1 million Amazon SNS, first 1 million is free)
 
 ## Use cases
-[### 1. Greet the user with welcome message and HR menu options - Lambda Fulfilment][1]
+### [1. Greet the user with welcome message and HR menu options - Lambda Fulfilment][1]
 <img src="images/usecase1/usecase1.png" alt="usecase1" width="500">
 
 ### 2. User authentication and validation against identity database (DynamoDB in our case) - Lambda Validation
