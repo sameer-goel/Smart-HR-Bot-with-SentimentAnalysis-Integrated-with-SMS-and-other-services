@@ -29,7 +29,7 @@ Create a Lambda Function (Console) - https://docs.aws.amazon.com/lex/latest/dg/g
 4.	Now Create
 -	Utterances – Hi, Hey, Hello
 -	Slots – Name: Name, Slot Type: AMAON.US_FIRST_NAME
-<img src="images/usecase1/4.png" width="500">
+<img src="images/usecase1/4.png" width="1000">
 
 -   Click gear icon and put some 
 Promts like:
