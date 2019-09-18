@@ -55,7 +55,7 @@ You can always add more more HR functionalities like vacations calander, leave b
 - FB: https://docs.aws.amazon.com/lex/latest/dg/fb-bot-association.html
 - Kik: https://docs.aws.amazon.com/lex/latest/dg/kik-bot-association.html
 - Twilio: https://docs.aws.amazon.com/lex/latest/dg/twilio-bot-association.html
-<img src="images/slack/slack.png" width="700">
+<img src="images/slack/Slack.png" width="700">
 
 ### 2. Amazon Pinpoint - two way SMS
 - Similar documentation https://aws.amazon.com/blogs/messaging-and-targeting/create-an-sms-chatbox-with-amazon-pinpoint-and-lex/
@@ -66,7 +66,7 @@ You can always add more more HR functionalities like vacations calander, leave b
 
 ### 4. Amazon Sumerian - talk to virtual host
 - https://docs.sumerian.amazonaws.com/tutorials/create/beginner/dialogue-component/
-<img src="images/sumerian/sumeriana.png" width="500">
+<img src="images/sumerian/sumeriana.jpg" width="500">
 <img src="images/sumerian/sumerian.png" width="500">
 
 ### 5. Publish as Alexa Skill - Ask Alexa
