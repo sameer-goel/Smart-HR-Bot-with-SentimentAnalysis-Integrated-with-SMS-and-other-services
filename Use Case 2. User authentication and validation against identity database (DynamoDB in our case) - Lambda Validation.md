@@ -74,14 +74,14 @@ We need to do following:
 Save this role.
 
 2. Create DynamoDB table, navigate to DynamoDB console
-<img src="images/usecase2/4.png" width="200">
+<img src="images/usecase2/4.png" width="400">
 
 - Primary key as ‘name’
 <img src="images/usecase2/5.png" width="1000">
 
 - Create Item
 
-<img src="images/usecase2/6.png" width="200"><img src="images/usecase2/7.png" width="200">
+<img src="images/usecase2/6.png" width="400"><img src="images/usecase2/7.png" width="400">
 
 - Repeat to enter some example names
 <img src="images/usecase2/7.png" width="500">
