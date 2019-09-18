@@ -16,7 +16,8 @@ The task this bot can do are:
 
 Future enhancement and implementation:
 1. Integration with AR VR Amazon sumerian https://docs.sumerian.amazonaws.com/tutorials/create/beginner/dialogue-component/
-2. More HR functionalities like vacations calander, leave balance etc
+2. One-time passwords (OTP) to authenticate users. https://aws.amazon.com/blogs/machine-learning/authenticate-users-with-one-time-passwords-in-amazon-lex-chatbots/
+3. More HR functionalities like vacations calander, leave balance etc
 
 ## Cost of this serverless setup for a month use even for production scale $2 - $10
 - Lex       :   $0.38 (500 text requests)
