@@ -2,7 +2,7 @@
 do_this() include the validation function validate_name()
 
 ## Demo:
-<img src="images/usecase2/usecase2.png" alt="usecase2" width="500">
+<img src="images/usecase2/usercase2.png" alt="usecase2" width="500">
 
 ## New functions introduced here:
 - elicit_slot: Informs Amazon Lex that the user is expected to provide a slot value in the response.
