@@ -35,19 +35,19 @@ Future enhancement and implementation:
 <img src="images/usecase2/usercase2.png" alt="usecase2" width="500">
 
 ### 3. Log in working hours, validate date and working hours
-<img src="images/usecase3/usercase3.png" alt="usecase3" width="500">
+<img src="images/usecase3/usecase3.png" alt="usecase3" width="500">
 <img src="images/usecase3/usecase3dateval.png" alt="usecase3" width="500">
 <img src="images/usecase3/usercase3hoursval.png" alt="usecase3" width="500">
 
 ### 4. Calculate pay in a particular month, validate if existing user
-<img src="images/usecase3/usecase4.png" alt="usecase4" width="500">
-<img src="images/usecase3/usecase4userval.png" alt="usecase4" width="500">
+<img src="images/usecase4/usecase4.png" alt="usecase4" width="500">
+<img src="images/usecase4/usecase4userval.png" alt="usecase4" width="500">
 
 ### 5. Search common FAQs related to HR services, like Policy, Salary, Agent
-<img src="images/usecase3/usecase5.png" alt="usecase5" width="500">
+<img src="images/usecase5/usecase5.png" alt="usecase5" width="500">
 
 ### 6. Sentiment Analysis of user interaction and connect to human support of negative sentiment found
-<img src="images/usecase3/usecase6.png" alt="usecase6" width="500">
+<img src="images/usecase6/usecase6.png" alt="usecase6" width="500">
 
 ## Integration
 ### 1. Slack, FB, Kik, twilio
