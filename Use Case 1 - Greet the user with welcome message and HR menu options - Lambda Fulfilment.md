@@ -33,23 +33,22 @@ Create a Lambda Function (Console) - https://docs.aws.amazon.com/lex/latest/dg/g
 
 -   Click gear icon and put some 
 Promts like:
-Please confirm your identity
-Please confirm your username
-Please confirm your identity by entering your username
+- Please confirm your identity
+- Please confirm your username
+- Please confirm your identity by entering your username
 
 Corresponding utterances:
-my name is ​{Name}​
-<img src="images/usecase1/4a.png" width="500">
+- my name is ​{Name}​
+<img src="images/usecase1/4a.png" width="1000">
 
 5. Save
-<img src="images/usecase1/4b.png" width="500">
+<img src="images/usecase1/4b.png" width="1000">
 
 ### Navigate to Lambda service in new tab
 6.	Create a new lambda function with 2.7 python as Runtime language and Create new role
-<img src="images/usecase1/5.png" width="500">
+<img src="images/usecase1/5.png" width="1000">
   
 6.	Copy code from Lab1_Mod1.py in Lambda editor
-<img src="images/usecase1/5.png" width="500">
 
 7.	Configure sample test event to test the code
 
