@@ -81,4 +81,4 @@ You can always add more more HR functionalities like vacations calander, leave b
 6. Deploy on web https://aws.amazon.com/blogs/machine-learning/deploy-a-web-ui-for-your-chatbot/
 7. Build chatbot using Excel https://aws.amazon.com/blogs/machine-learning/build-an-amazon-lex-chatbot-with-microsoft-excel/
 8. Use voice authenitcation with Pindrop and Connect: Fraud Detection with Pindrop and Amazon Connect - https://aws.amazon.com/solutionspace/contact-center/amazon-connect-pindrop/
-<img src="images/pinpoint/pindrop.png" width="500">
+<img src="images/pinpoint/pindrop.png">
