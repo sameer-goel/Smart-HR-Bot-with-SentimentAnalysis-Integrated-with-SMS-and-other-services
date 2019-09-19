@@ -1,4 +1,4 @@
-# Amazon Lex HR Portal
+# Amazon Lex HR Portal- Smart Bot with Sentiment Analysis integrated with SMS and other services
 Build Amazon Lex chatbot to interact with Lambda, Amazon DynamoDB, Amazon Pinpoint, Amazon Comprehend, Amazon Connect, Twilio, Slack, Facebook, Kik and Alexa devices.
 
 ## Architecture
