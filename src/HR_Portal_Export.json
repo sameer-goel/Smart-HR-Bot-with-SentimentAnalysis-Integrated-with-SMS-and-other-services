@@ -6,14 +6,14 @@
   },
   "resource": {
     "name": "HR_Portal",
-    "version": "4",
+    "version": "5",
     "intents": [
       {
         "name": "CalculateMyPay",
-        "version": "7",
+        "version": "9",
         "fulfillmentActivity": {
           "codeHook": {
-            "uri": "arn:aws:lambda:us-east-1:123456789876:function:hr_portal-hook",
+            "uri": "arn:aws:lambda:us-east-1:722911934590:function:hr_portal-hook",
             "messageVersion": "1.0"
           },
           "type": "CodeHook"
@@ -74,16 +74,16 @@
           }
         ],
         "dialogCodeHook": {
-          "uri": "arn:aws:lambda:us-east-1:123456789876:function:hr_portal-hook",
+          "uri": "arn:aws:lambda:us-east-1:722911934590:function:hr_portal-hook",
           "messageVersion": "1.0"
         }
       },
       {
         "name": "HRInfo",
-        "version": "9",
+        "version": "17",
         "fulfillmentActivity": {
           "codeHook": {
-            "uri": "arn:aws:lambda:us-east-1:123456789876:function:hr_portal-hook",
+            "uri": "arn:aws:lambda:us-east-1:722911934590:function:hr_portal-hook",
             "messageVersion": "1.0"
           },
           "type": "CodeHook"
@@ -96,15 +96,16 @@
           {
             "sampleUtterances": [],
             "slotType": "String",
-            "slotTypeVersion": "1",
+            "slotTypeVersion": "3",
             "slotConstraint": "Required",
             "valueElicitationPrompt": {
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "what can I help you with?"
+                  "content": "what can I help you with? try Salary, Policy, Agent.."
                 }
               ],
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"imageUrl\":\"http://onyxvoip.com/wp-content/uploads/2019/07/FAQ.png\",\"subTitle\":\"try Salary, Policy, Agent..\",\"title\":\"What kind of questions do you have\",\"buttons\":[{\"text\":\"Salary\",\"value\":\"salary\"},{\"text\":\"Agent\",\"value\":\"agent\"},{\"text\":\"Policy\",\"value\":\"policy\"},{\"text\":\"Vacation\",\"value\":\"vacation\"}]}]}",
               "maxAttempts": 2
             },
             "priority": 1,
@@ -117,7 +118,7 @@
         "version": "9",
         "fulfillmentActivity": {
           "codeHook": {
-            "uri": "arn:aws:lambda:us-east-1:123456789876:function:hr_portal-hook",
+            "uri": "arn:aws:lambda:us-east-1:722911934590:function:hr_portal-hook",
             "messageVersion": "1.0"
           },
           "type": "CodeHook"
@@ -159,16 +160,16 @@
           }
         ],
         "dialogCodeHook": {
-          "uri": "arn:aws:lambda:us-east-1:123456789876:function:hr_portal-hook",
+          "uri": "arn:aws:lambda:us-east-1:722911934590:function:hr_portal-hook",
           "messageVersion": "1.0"
         }
       },
       {
         "name": "LogMyHours",
-        "version": "9",
+        "version": "14",
         "fulfillmentActivity": {
           "codeHook": {
-            "uri": "arn:aws:lambda:us-east-1:123456789876:function:hr_portal-hook",
+            "uri": "arn:aws:lambda:us-east-1:722911934590:function:hr_portal-hook",
             "messageVersion": "1.0"
           },
           "type": "CodeHook"
@@ -230,19 +231,28 @@
           }
         ],
         "dialogCodeHook": {
-          "uri": "arn:aws:lambda:us-east-1:123456789876:function:hr_portal-hook",
+          "uri": "arn:aws:lambda:us-east-1:722911934590:function:hr_portal-hook",
           "messageVersion": "1.0"
         }
       }
     ],
     "slotTypes": [
       {
+        "description": "any string",
         "name": "String",
-        "version": "1",
+        "version": "3",
         "enumerationValues": [
           {
-            "value": "agent",
-            "synonyms": []
+            "value": "agent"
+          },
+          {
+            "value": "vacation"
+          },
+          {
+            "value": "salary"
+          },
+          {
+            "value": "policy"
           }
         ],
         "valueSelectionStrategy": "ORIGINAL_VALUE"
