@@ -100,3 +100,80 @@ def do_this(intent_request):
                  {'contentType': 'PlainText',
                   'content': 'Hey {}!, I am Lex. \n\nNice to meet you! :) You can try HR portal functionalities: \n 1. Log my hours \n 2. Calculate my pay \n 3. Faq'.format(name)})
 ```
+## Code
+
+```
+import os
+import time
+import logging
+import boto3
+import decimal
+import dateutil.parser
+import datetime
+from boto3.dynamodb.conditions import Key, Attr
+
+# Logger
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+# Client for Comprehend
+client = boto3.client('comprehend')
+"""
+Helper function for Lex
+"""  
+def get_slots(intent_request):
+    return intent_request['currentIntent']['slots']
+    
+#Close: Informs Amazon Lex not to expect a response from the user. Just return any final message from Lambda to Lex
+def close(session_attributes, fulfillment_state, message):
+    response = {
+        'sessionAttributes': session_attributes,
+        'dialogAction': {
+            'type': 'Close',
+            'fulfillmentState': fulfillment_state,
+            'message': message
+        }
+    }
+    return response
+    
+
+"""
+Functions to fulfill intent
+"""
+def do_this(intent_request):
+    # get the value of Name slot provided by Lex interface
+    name = intent_request['currentIntent']['slots']["Name"]
+    source = intent_request['invocationSource']
+    
+    # return closer of the intent
+    return close(intent_request['sessionAttributes'],
+                 'Fulfilled',
+                 {'contentType': 'PlainText',
+                  'content': 'Hey {}!, I am Lex. \n\nNice to meet you! :) You can access following HR portal functionalities: \n 1. Log my hours \n 2. Calculate my pay \n 3. FAQ'.format(name)
+                 }
+                 )
+         
+#############################################################################################################
+def dispatch(intent_request):
+    """
+    Called when the user specifies an intent for this bot.
+    """
+    logger.debug('dispatch userId={}, intentName={}'.format(intent_request['userId'], intent_request['currentIntent']['name']))
+    intent_name = intent_request['currentIntent']['name']
+
+    # Dispatch to your bot's intent handlers
+    if intent_name == 'DoSomething':
+        return do_this(intent_request)
+
+    raise Exception('Intent with name ' + intent_name + ' not supported')
+
+def lambda_handler(event, context):
+    """
+    Route the incoming request based on intent.
+    The JSON body of the request is provided in the event slot.
+    """
+    # By default, treat the user request as coming from the America/New_York time zone.
+    os.environ['TZ'] = 'America/New_York'
+    time.tzset()
+
+    return dispatch(event)
+```

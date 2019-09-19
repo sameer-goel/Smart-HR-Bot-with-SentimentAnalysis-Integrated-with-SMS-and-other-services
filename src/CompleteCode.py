@@ -211,7 +211,7 @@ def scanFAQ(keyword):
     return(results)
 
 """
-Functions to fulfil intent
+Functions to fulfill intent
 """
 def do_this(intent_request):
     # get the value of Name slot provided by Lex interface
@@ -237,7 +237,7 @@ def do_this(intent_request):
     return close(intent_request['sessionAttributes'],
                  'Fulfilled',
                  {'contentType': 'PlainText',
-                  'content': 'Hey {}!, I am Lex. \n\nNice to meet you! :) You can try HR portal functionalities: \n 1. Log my hours \n 2. Calculate my pay \n 3. Faq'.format(name)
+                  'content': 'Hey {}!, I am Lex. \n\nNice to meet you! :) You can access following HR portal functionalities: \n 1. Log my hours \n 2. Calculate my pay \n 3. FAQ'.format(name)
                  }
                  )
                   
@@ -311,6 +311,8 @@ def hrInfo(intent_request):
         keyword="policy"
     if (ques.find("salary")>-1):
         keyword="salary"
+    if (ques.find("vacation")>-1):
+        keyword="vacation"
     # if user put of some new quesiton, let connect him to human at the end
     if keyword=="default":
         keyword="agent"
@@ -322,6 +324,8 @@ def hrInfo(intent_request):
                  {'contentType': 'PlainText',
                   'content': 'Thank you for your quesiton related to {}.\n\n{}'.format(keyword,faq_result)})
 
+
+#############################################################################################################
 def dispatch(intent_request):
     """
     Called when the user specifies an intent for this bot.

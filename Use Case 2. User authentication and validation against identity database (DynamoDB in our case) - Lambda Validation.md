@@ -167,3 +167,176 @@ Now uncomment the section of dynamoDB and comment the list in our validation fun
 
 Test again with the configured event
 <img src="images/usecase1/6.png" width="1000">
+
+## Code
+```
+import os
+import time
+import logging
+import boto3
+import decimal
+import dateutil.parser
+import datetime
+from boto3.dynamodb.conditions import Key, Attr
+
+# Logger
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+# DynamoDb table decaration
+dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
+# Client for Comprehend
+client = boto3.client('comprehend')
+"""
+Helper function for Lex
+"""  
+def get_slots(intent_request):
+    return intent_request['currentIntent']['slots']
+    
+#Close: Informs Amazon Lex not to expect a response from the user. Just return any final message from Lambda to Lex
+def close(session_attributes, fulfillment_state, message):
+    response = {
+        'sessionAttributes': session_attributes,
+        'dialogAction': {
+            'type': 'Close',
+            'fulfillmentState': fulfillment_state,
+            'message': message
+        }
+    }
+    return response
+    
+# ElicitIntent: Informs Amazon Lex that the user is expected to respond with an utterance that includes an intent. 
+def elicit_slot(session_attributes, intent_name, slots, slot_to_elicit, message):
+    return {
+        'sessionAttributes': session_attributes,
+        'dialogAction': {
+            'type': 'ElicitSlot',
+            'intentName': intent_name,
+            'slots': slots,
+            'slotToElicit': slot_to_elicit,
+            'message': message
+        }
+    }
+
+#Delegate: Directs Amazon Lex to choose the next course of action based on the bot configuration.
+def delegate(session_attributes, slots):
+    return {
+        'sessionAttributes': session_attributes,
+        'dialogAction': {
+            'type': 'Delegate',
+            'slots': slots
+        }
+    }
+
+# return response to Lex with/without defined return message
+def build_validation_result(is_valid, violated_slot, message_content):
+    if message_content is None:
+        return {
+            "isValid": is_valid,
+            "violatedSlot": violated_slot,
+        }
+
+    return {
+        'isValid': is_valid,
+        'violatedSlot': violated_slot,
+        'message': {'contentType': 'PlainText', 'content': message_content}
+    }
+    
+"""
+Functions to validate the user input
+"""
+def validate_name(name):
+    #friends = ['srinivas', 'laxmi']
+    friends=find_name_in_ddb(name)
+    if name is not None and name.lower() not in friends:
+        return build_validation_result(False,
+                                       'Name',
+                                       'I am sorry {}. This username does not exist, can you retype your username correctly'.format(name))
+    
+    return build_validation_result(True, None, None)
+        
+"""
+Dynamodb Functions read or write values
+"""
+def find_name_in_ddb(name):
+    friends_table = dynamodb.Table('friends')
+    name = str(name)
+    response = friends_table.query(
+        KeyConditionExpression=Key('name').eq(name)
+        )
+    names=[]
+    for i in response['Items']:
+        names = (i['name'].lower())
+    
+    return(names)
+
+"""
+Functions to fulfill intent
+"""
+def do_this(intent_request):
+    # get the value of Name slot provided by Lex interface
+    name = intent_request['currentIntent']['slots']["Name"]
+    source = intent_request['invocationSource']
+    
+    if source == 'DialogCodeHook':
+        # Perform basic validation on the supplied input slots.
+        # Use the elicitSlot dialog action to re-prompt for the first violation detected.
+        slots = get_slots(intent_request)
+        validation_result = validate_name(name)
+        if not validation_result['isValid']:
+            slots[validation_result['violatedSlot']] = None
+            return elicit_slot(intent_request['sessionAttributes'],
+                               intent_request['currentIntent']['name'],
+                               slots,
+                               validation_result['violatedSlot'],
+                               validation_result['message'])
+        
+        output_session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
+        return delegate(output_session_attributes, get_slots(intent_request))
+    # return closer of the intent
+    return close(intent_request['sessionAttributes'],
+                 'Fulfilled',
+                 {'contentType': 'PlainText',
+                  'content': 'Hey {}!, I am Lex. \n\nNice to meet you! :) You can access following HR portal functionalities: \n 1. Log my hours \n 2. Calculate my pay \n 3. FAQ'.format(name)
+                 }
+                 )
+         
+#############################################################################################################
+def dispatch(intent_request):
+    """
+    Called when the user specifies an intent for this bot.
+    """
+    logger.debug('dispatch userId={}, intentName={}'.format(intent_request['userId'], intent_request['currentIntent']['name']))
+    intent_name = intent_request['currentIntent']['name']
+
+    # Dispatch to your bot's intent handlers
+    if intent_name == 'DoSomething':
+        return do_this(intent_request)
+    elif intent_name == 'LogMyHours':
+        return logMyHours(intent_request)
+    elif intent_name == 'CalculateMyPay':
+        return calcMyPay(intent_request)
+    elif intent_name == 'HRInfo':
+        return hrInfo(intent_request)
+
+    raise Exception('Intent with name ' + intent_name + ' not supported')
+
+def lambda_handler(event, context):
+    """
+    Route the incoming request based on intent.
+    The JSON body of the request is provided in the event slot.
+    """
+    # By default, treat the user request as coming from the America/New_York time zone.
+    os.environ['TZ'] = 'America/New_York'
+    time.tzset()
+    
+    """
+    # Check for sentiment
+    sentiment=client.detect_sentiment(Text=event['inputTranscript'],LanguageCode='en')['Sentiment']
+    if sentiment=='NEGATIVE':
+        return close({},
+                 'Fulfilled',
+                 {'contentType': 'PlainText',
+                  'content': 'I am sorry. Seems like you are having troubles with our chat service. Let me transfer you to the a human support.'}) #trigger a call to human support
+    """
+    return dispatch(event)
+```
