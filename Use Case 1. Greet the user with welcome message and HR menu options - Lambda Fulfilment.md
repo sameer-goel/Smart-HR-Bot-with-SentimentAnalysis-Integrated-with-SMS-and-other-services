@@ -76,7 +76,7 @@ change the values according to your data
     },
     "confirmationStatus": "None"
   },
-  "inputTranscript": "This is ok"
+  "inputTranscript": "This is awesome"
 }
 ```
 

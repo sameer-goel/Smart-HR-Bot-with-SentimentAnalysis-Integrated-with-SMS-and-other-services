@@ -39,6 +39,6 @@ You can test this along with Use case 1 fucntion do_something(), we just added i
     },
     "confirmationStatus": "None"
   },
-  "inputTranscript": "This is awesome"
+  "inputTranscript": "rubbish"
 }
 ```
