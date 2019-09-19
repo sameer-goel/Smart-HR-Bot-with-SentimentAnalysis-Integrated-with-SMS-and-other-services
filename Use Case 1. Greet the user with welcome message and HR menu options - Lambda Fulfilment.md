@@ -49,7 +49,7 @@ Corresponding utterances:
 6.	Create a new lambda function with 2.7 python as Runtime language and Create new role
 <img src="images/usecase1/5.png" width="1000">
   
-6.	Copy code from Lab1_Mod1.py in Lambda editor
+6.	Copy code from bottom of this page in Lambda editor
 
 7.	Configure sample test event to test the code
 <img src="images/usecase1/6.png" width="1000">
