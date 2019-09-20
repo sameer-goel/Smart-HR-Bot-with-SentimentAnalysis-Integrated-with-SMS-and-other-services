@@ -5,7 +5,7 @@ Build Amazon Lex chatbot to interact with Lambda, Amazon DynamoDB, Amazon Pinpoi
 ![architecture](images/readme/hrbot.png)
 
 ## Motivation to build this bot
-Bot is built for those employees (say warehouse workers) who does not have internet access and line up to a paper based register,  to log basic daily tasks. With this bot they can do it using SMS, Call, Ask Alexa as regular dialog coversation like you are asking your assitant or friend to do the task for you.
+Bot is built for those employees (say warehouse field workers) who does not have internet access and line up to a paper based register,  to log basic daily tasks. With this bot they can do it using SMS, Call, Ask Alexa as regular dialog coversation like you are asking your assitant or friend to do the task for you.
 
 The task this bot can do are:
 
@@ -15,7 +15,7 @@ The task this bot can do are:
 4. Most importantly, all the interactions are beging analyzed by Amazon Comprehend for sentiment analysis. This way if the user is not happy we can divert the interation immidiatly to human.
 You can always add more more HR functionalities like vacations calander, leave balance etc
 
-<img src="images/Labour.jpg" alt="usecase4" width="500">
+<img src="images/Labour.jpg" alt="field_wrorkers" width="500">
 
 ## Cost of this serverless setup for a month use even for production scale $2 - $5
 - Lex       :   $0.38 (500 text requests)
