@@ -7,7 +7,11 @@ Calculate pay based on username for a particular month and year.
 <img src="images/usecase4/usecase4userval.png" alt="usecase4" width="500">
 
 ## We need to do following:
-1.	Write a function to Get item in DDB table based on user provided date
+1. Create customer slot type month
+2. Write a function to Get item in DDB table based on user provided date
+
+## Custom slot type
+<img src="images/usecase4/slot.png" width="500">
 
 ## Functions
 ```
