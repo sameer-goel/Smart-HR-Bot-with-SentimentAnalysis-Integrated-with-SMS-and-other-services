@@ -21,7 +21,8 @@ putItemInDDB()
 1. Create a dynamodb table
 <img src="images/usecase3/1.png">
 
-2. Create new intent log my hours, see sample uttrances and slot types from image below
+## Intent
+Create new intent log my hours, see sample uttrances and slot types from image below
 <img src="images/usecase3/2.png">
 
 ## Functions

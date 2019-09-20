@@ -10,6 +10,9 @@ Calculate pay based on username for a particular month and year.
 1. Create customer slot type month
 2. Write a function to Get item in DDB table based on user provided date
 
+## Intent
+<img src="images/usecase4/uc4intent.png">
+
 ## Custom slot type
 <img src="images/usecase4/slot.png" width="500">
 

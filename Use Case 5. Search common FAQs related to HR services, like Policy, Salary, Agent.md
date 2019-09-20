@@ -16,6 +16,12 @@ Navigate to DynamoDB console and create table as below
 Create some items for faq keywords
 <img src="images/usecase5/2.png">
 
+## Intent
+<img src="images/usecase6/uc6intent.png">
+
+## Slot
+<img src="images/usecase6/uc6slots.png" width="500">
+
 ## Functions
 ```
 def hrInfo(intent_request):
